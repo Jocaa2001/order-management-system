@@ -40,7 +40,20 @@ class OrderSeeder extends Seeder
                     'condition' => !empty($record[7]) ? $record[7] : null,
                     'days_valid' => !empty($record[1]) ? $record[1] : null,
                     'supplier_id' => !empty($record[0]) ? Supplier::where('name', $record[0])->value('id') : null,
-                    'part_id' => !empty($record[4]) ? Part::where('description', $record[4])->value('id') : null,
+
+                    //Po pretpostavci da su delovi koji imaju isti description a razlicit number, razliciti, potrebno je part_id
+                    //traziti i po jednoj i po drugoj koloni, u kodu su obradjeni slucajevi kada i kada je number null.
+                    //1. Imaju description i number -> Treba da tražimo po oba polja.
+                    //2. Imaju samo description (ali ne i number) → Treba da tražimo samo po description.
+                    //3. Nemaju ni jedno ni drugo → part_id treba biti null.
+
+                    'part_id' => !empty($record[4]) 
+                        ? Part::when(!empty($record[3]), function ($query) use ($record) {
+                            return $query->where('number', $record[3]);
+                            })
+                            ->where('description', $record[4])
+                            ->value('id') 
+                            : null,
                 ]);
 
             }
