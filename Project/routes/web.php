@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\PartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/suppliers', [SupplierController::class, 'index']);
+Route::get('/parts', [PartController::class, 'index']);
+
+Route::put('/suppliers/{supplier}', [SupplierController::class, 'update']);
+Route::put('/parts/{part}', [PartController::class, 'update']);

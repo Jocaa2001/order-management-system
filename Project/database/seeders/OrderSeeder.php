@@ -44,8 +44,7 @@ class OrderSeeder extends Seeder
                     //Po pretpostavci da su delovi koji imaju isti description a razlicit number, razliciti, potrebno je part_id
                     //traziti i po jednoj i po drugoj koloni, u kodu su obradjeni slucajevi kada i kada je number null.
                     //1. Imaju description i number -> Treba da tražimo po oba polja.
-                    //2. Imaju samo description (ali ne i number) → Treba da tražimo samo po description.
-                    //3. Nemaju ni jedno ni drugo → part_id treba biti null.
+                    //2. Imaju samo description (ali ne i number) -> Treba da tražimo samo po description.
 
                     'part_id' => !empty($record[4]) 
                         ? Part::when(!empty($record[3]), function ($query) use ($record) {
