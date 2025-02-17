@@ -34,7 +34,7 @@ return new class extends Migration
             $table->dropColumn(['priority', 'quantity', 'condition', 'days_valid']);
             $table->dropForeign(['supplier_id']);
             $table->dropColumn('supplier_id');
-            $table->dropForeign(['part_id']); // Brišemo strani ključ za Part
+            $table->dropForeign(['part_id']); 
             $table->dropColumn('part_id');
         });
     }

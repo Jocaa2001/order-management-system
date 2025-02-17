@@ -15,11 +15,11 @@ class Order extends Model
         'description'
     ];
 
-    public function parts(){
+    public function part(){
         return $this->belongsTo(Part::class); 
     }
 
-    public function suppliers(){
+    public function supplier(){
         return $this->belongsTo(Supplier::class); 
     }
 
