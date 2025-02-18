@@ -22,6 +22,8 @@ Route::get('/', function () {
 
 Route::get('/suppliers', [SupplierController::class, 'index']);
 Route::get('/parts', [PartController::class, 'index']);
+Route::get('/parts/{id}', [PartController::class, 'getAllPartsBySupplierId']);
 
 Route::put('/suppliers/{supplier}', [SupplierController::class, 'update']);
 Route::put('/parts/{part}', [PartController::class, 'update']);
+

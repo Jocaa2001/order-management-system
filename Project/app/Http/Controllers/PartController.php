@@ -96,4 +96,17 @@ class PartController extends Controller
     {
         //
     }
+
+    public function getAllPartsBySupplierId($id)
+    {
+        $parts = Part::where('supplier_id', $id)->get();
+
+   
+    if ($parts->isEmpty()) {
+        return response()->json(['message' => 'No parts found for this supplier'], 404);
+    }
+
+    return response()->json($parts, 200);
+    }
+
 }
