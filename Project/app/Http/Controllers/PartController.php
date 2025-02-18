@@ -89,24 +89,42 @@ class PartController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Part  $part
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Part $part)
+    public function destroy($id)
     {
-        //
+        $part = Part::find($id);
+
+        if (!$part) {
+            return response()->json([
+                'message' => "Part with ID $id not found."
+            ], 404);
+        }
+
+        $part->delete();
+
+        return response()->json([
+            'message' => "Part was deleted successfully.",
+            'part' => $part,
+        ], 200);
     }
 
+    /**
+     * Get all parts by supplier ID.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function getAllPartsBySupplierId($id)
     {
         $parts = Part::where('supplier_id', $id)->get();
 
-   
-    if ($parts->isEmpty()) {
-        return response()->json(['message' => 'No parts found for this supplier'], 404);
-    }
+        // Proverava da li postoje delovi za tog dobavljača
+        if ($parts->isEmpty()) {
+            return response()->json(['message' => 'No parts found for this supplier'], 404);
+        }
 
-    return response()->json($parts, 200);
+        return response()->json($parts, 200);
     }
-
 }

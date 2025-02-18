@@ -97,8 +97,22 @@ class SupplierController extends Controller
      * @param  \App\Models\Supplier  $supplier
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Supplier $supplier)
+    public function destroy($id)
     {
-        //
+
+        $supplier = Supplier::find($id);
+
+        if (!$supplier) {
+            return response()->json([
+                'message' => "Supplier with ID $id not found."
+            ], 404);
+        }
+
+        $supplier->delete();
+
+        return response()->json([
+            'message' => "Supplier was deleted successfully.",
+            'supplier' => $supplier,
+        ], 200);
     }
 }

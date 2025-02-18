@@ -27,3 +27,8 @@ Route::get('/parts/{id}', [PartController::class, 'getAllPartsBySupplierId']);
 Route::put('/suppliers/{supplier}', [SupplierController::class, 'update']);
 Route::put('/parts/{part}', [PartController::class, 'update']);
 
+
+//uradjen soft delete da bi se ocuvao integritet baze
+Route::delete('/supplier/{id}', [SupplierController::class, 'destroy']);
+
+Route::delete('/part/{id}', [PartController::class, 'destroy']);
