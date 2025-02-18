@@ -19,9 +19,7 @@ class PartSeeder extends Seeder
      */
     public function run()
     {
-        Schema::disableForeignKeyConstraints();
-        Part::truncate();
-        Schema::enableForeignKeyConstraints();
+       
 
         $heading = true;
         $input_file = fopen(base_path("database/data/suppliers.csv"), "r");

@@ -23,6 +23,7 @@ Route::get('/', function () {
 Route::get('/suppliers', [SupplierController::class, 'index']);
 Route::get('/parts', [PartController::class, 'index']);
 Route::get('/parts/{id}', [PartController::class, 'getAllPartsBySupplierId']);
+Route::get('/exportCSV/{id}',[PartController::class, 'exportCSV']);
 
 Route::put('/suppliers/{supplier}', [SupplierController::class, 'update']);
 Route::put('/parts/{part}', [PartController::class, 'update']);
@@ -32,3 +33,6 @@ Route::put('/parts/{part}', [PartController::class, 'update']);
 Route::delete('/supplier/{id}', [SupplierController::class, 'destroy']);
 
 Route::delete('/part/{id}', [PartController::class, 'destroy']);
+
+
+

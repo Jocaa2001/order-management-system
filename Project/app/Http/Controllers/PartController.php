@@ -3,7 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Part;
+use App\Models\Category;
+use App\Models\Supplier;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\Storage;
+
 
 class PartController extends Controller
 {
@@ -127,4 +132,45 @@ class PartController extends Controller
 
         return response()->json($parts, 200);
     }
+
+
+
+
+
+
+
+
+
+
+    public function exportCSV($id)
+    {
+    $parts = Part::where('supplier_id', $id)->get();
+    $supplierName = Supplier::where('id', $id)->value('name');
+    
+    $formattedSupplierName = preg_replace('/[^a-zA-Z0-9]/', '_', strtolower($supplierName));
+    $timestamp = now()->format('Y_m_d-H_i');
+    $csvFileName = "{$formattedSupplierName}_{$timestamp}.csv";
+
+    
+    $csvData = fopen($csvFileName, 'w');
+    fputcsv($csvData, ['ID', 'Number', 'Description', 'Price', 'Supplier', 'Category']);
+
+    foreach ($parts as $part) {
+        $categoryName = Category::where('id', $part->category_id)->value('name');
+        
+        fputcsv($csvData, [
+            $part->id,
+            $part->number,
+            $part->description,
+            $part->price,
+            $supplierName,
+            $categoryName
+        ]);
+    }
+    fclose($csvData);
+
+    return Response::download($csvFileName);
+
+    }
+
 }

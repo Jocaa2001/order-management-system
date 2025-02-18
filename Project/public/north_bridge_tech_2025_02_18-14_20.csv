@@ -1,0 +1,28 @@
+ID,Number,Description,Price,Supplier,Category
+4,NVHD0,"Dell Optiplex 3240 Hard Drive Interface ODD Connector Cable",12.92,"North Bridge Tech",Keyboard
+7,04W6891,"Lenovo Thinkpad Helix-20CG Webcam Camera 00HN332",10,"North Bridge Tech","Heatsink and Fan"
+11,619440-001,"Lenovo Chromebook Thinkpad 11e-20GF Webcam Camera 00HN345",10,"North Bridge Tech","Heatsink and Fan"
+13,2Y6N5,"Camera 720P Front MIC WTB Chny",10,"North Bridge Tech","Heatsink and Fan"
+16,856681-001,"Camera 720P Front MIC WTB Bsn ",22.41,"North Bridge Tech","Heatsink and Fan"
+22,730903-001,"Lenovo Thinkpad L430-2465 USB Board 04W3743",10,"North Bridge Tech","Fan Only"
+25,PPD50,"Lenovo Thinkpad L430-2465 Heatsink & Fan 04W3747",10,"North Bridge Tech","Fan Only"
+27,724870-001,"FRU Thermal Module AVC",10,"North Bridge Tech","Fan Only"
+30,730792-001,"Lenovo Thinkpad X131e CPU Fan Cooling Heatsink",10,"North Bridge Tech","Fan Only"
+32,WKT5Y,"FRU DC-in Cable 14W/15W",10,"North Bridge Tech","Fan Only"
+35,90200441,"Cable Internal",10,"North Bridge Tech",Camera
+37,707767-001,"Cable Internal",10,"North Bridge Tech",Camera
+39,00HN332,"Lenovo Thinkpad X1 Carbon-20A7 Heatsink & Fan 04X3829",10,"North Bridge Tech",Camera
+41,812714-001,"LENOVO HEATSINK WITH FAN THERMAL MODULE THINKPAD X1 CARBON TYPE 20A8",10,"North Bridge Tech",Camera
+42,659516-001,"Mystique-1FRU FAN UMA",10,"North Bridge Tech",Camera
+61,5C20J46489,"Lenovo Miix 300-10IBY 5C10J46176 Tested Warranty Ships Today",10,"North Bridge Tech",Camera
+65,830877-001,"CAMERA CCY CNFEH39 HD NB camera",10,"North Bridge Tech",Camera
+109,5C50L78362,"OPTICAL DRIVE CONNECTOR BOARD",10,"North Bridge Tech",Daughterboard
+112,7FWX8,"PCBA TOUCHPAD BUTTON EGGROLL 1.X",10,"North Bridge Tech",Daughterboard
+114,FCDKH,"TouchPad button board - Includes bracket and cables",10,"North Bridge Tech",Daughterboard
+126,5C10L08679,"USB BOARD - OPP 17"" DINER",10,"North Bridge Tech",Daughterboard
+127,00JT568,"HP HP 17-X051NR USB Board with Cable 856613-001 Tested Warranty",10,"North Bridge Tech",Daughterboard
+129,855011-001,"SPS-WEBCAM HD PITA 1.X",10,"North Bridge Tech",Daughterboard
+132,0NFVF,"SPS-WEBCAM HD PITA 1.X",10,"North Bridge Tech",Daughterboard
+135,824140-001,"HP Chromebook 11-V010NR Hall Sensor Board with Cable 900810-001",11.37,"North Bridge Tech",Daughterboard
+138,DALI5TH16F0,"CBL HALL SENSOR BOARD CONNECTOR CABLE ",10,"North Bridge Tech",Daughterboard
+140,0K5M1,"HP Stream 11-Y010NR Audio USB Board with Cable 902960-001",10.49,"North Bridge Tech",Daughterboard
