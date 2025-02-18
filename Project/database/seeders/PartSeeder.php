@@ -31,7 +31,9 @@ class PartSeeder extends Seeder
           
             
             if (!$heading)
-            {
+            {   
+
+                if($record[3] == '') continue;
 
                 $partNumber = !empty($record[3]) ? $record[3] : null;
                 $partDescription = !empty($record[4]) ? $record[4] : null;
@@ -39,13 +41,15 @@ class PartSeeder extends Seeder
                 $supplierId = !empty($record[0]) ? Supplier::where('name', $record[0])->value('id') : null;
                 $categoryId = !empty($record[8]) ? Category::where('name', $record[8])->value('id') : null;
 
-                Part::firstOrCreate([
-                    'number' => $partNumber,
-                    'description' => $partDescription,
-                    'price' => $partPrice,
-                    'supplier_id' => $supplierId,
-                    'category_id' => $categoryId,
-                ]);
+                Part::firstOrCreate(
+                    ['number' => $partNumber], 
+                    [
+                        'description' => $partDescription,
+                        'price' => $partPrice,
+                        'supplier_id' => $supplierId,
+                        'category_id' => $categoryId,
+                    ]
+                );
 
             }
             $heading = false;
