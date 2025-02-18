@@ -24,5 +24,13 @@ class DatabaseSeeder extends Seeder
         Category::truncate();
         Supplier::truncate();
         Schema::enableForeignKeyConstraints();
+
+        $this->call([
+            CategorySeeder::class,
+            SupplierSeeder::class,
+            PartSeeder::class,
+            OrderSeeder::class,
+        ]);
+
     }
 }
